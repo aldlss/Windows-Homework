@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "lab2Window.Desktop": {
+      "commandName": "Project",
+      "workingDirectory": "F:\\code\\homework\\windows\\lab2"
+    }
+  }
+}

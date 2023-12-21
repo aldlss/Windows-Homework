@@ -1,0 +1,33 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:lab3.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="lab3.Views.MainView"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+        <StackPanel Spacing="10" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Spacing="10">
+				<Button Content="呼叫服务员" Command="{Binding Path=CallWaiterCommand}"/>
+				<Button Content="让服务员走" Command="{Binding Path=LetWaiterGoCommand}"/>
+			</StackPanel>
+            <TextBlock Text="想点的单：" FontSize="20"/>
+            <TextBox Text="{Binding Path=Ordered}"/>
+            <Button Command="{Binding Path=OrderCommand}" Content="点单" Padding="10" HorizontalAlignment="Center"/>
+        </StackPanel>
+		<ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto">
+			<TextBlock Padding="20" Text="{Binding Path=Output}"/>
+		</ScrollViewer>
+    </Grid>
+</UserControl>

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "dllCaller": {
+      "commandName": "Project",
+      "workingDirectory": "F:\\code\\homework\\windows\\lab1\\dllCaller"
+    }
+  }
+}
